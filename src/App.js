@@ -21,7 +21,7 @@ function App() {
             <nav className='navigation'>
                 <ul>
                     <li>
-                        <Link className='link' to='/'>Главная</Link>
+                        <Link className='link' to='/Portfolio'>Главная</Link>
                     </li>
                     {/* <li>
                         <Link className='link' to='/education'>Образование</Link>
@@ -43,7 +43,7 @@ function App() {
             
             <AnimatePresence>
                 <Switch>
-                    <Route path='/' exact>
+                    <Route path='/Portfolio' exact>
                         <MainPage/>
                     </Route>
                     <Route path='/about' exact>
