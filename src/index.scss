@@ -53,6 +53,9 @@ $fw-bold: 700;
 $fw-light: 300;
 $fw-medium: 400;
 
+$breakpoint-s-min: 520px;
+$breakpoint-s-max: $breakpoint-s-min - 1px;
+
 // ==== // Variables ====
 
 
@@ -74,10 +77,16 @@ $fw-medium: 400;
   margin-right: 20px;
   height: 320px;
   min-width: 200px;
+  max-width: 200px;
   color: $color-text;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   ul {
     padding: 10px 20px;
     list-style: none;
+    margin: 0;
     li {
       cursor: pointer;
       border-radius: 4px;
@@ -99,6 +108,11 @@ $fw-medium: 400;
         opacity: 1;
       }
     }
+  }
+  &_exit {
+    display: none;
+    width: 100%;
+    height: 20px;
   }
 }
 
@@ -172,6 +186,7 @@ $fw-medium: 400;
     padding: 10px 10px;
   }
   &_image {
+    width: 100px;
     margin: 0 auto;
     margin-bottom: 18px;
     cursor: pointer;
@@ -195,6 +210,37 @@ $fw-medium: 400;
   &_city {
     font-size: 14px;
     font-weight: $fw-medium;
+  }
+}
+
+.profile_header {
+  display: none;
+  padding: 5px 10px;
+  height: 50px;
+  border-bottom: 1px solid $color-fon;
+}
+
+.burger {
+  margin-right: auto;
+  padding: 8px 8px;
+  background: none;
+  border: 1px solid #D1D1E4;
+  border-radius: 4px;
+  cursor: pointer;
+  &_line {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background-color: #d6dae5;
+    & + & {
+      margin-top: 4px;
+    }
+  }
+    &:active .burger_line{
+      background-color: grey;
+  }
+  &:active {
+      border: 1px solid grey;
   }
 }
 
@@ -391,6 +437,206 @@ $fw-medium: 400;
   font-size: 24px;
   font-weight: $fw-bold;
 }
+
+
+
+// === MEDIA === //
+
+@media (max-width: $breakpoint-s-max) {
+  .navigation {
+    position: fixed;
+    left: -205px;
+    top: 0;
+    z-index: 5;
+    height: 270px;
+    min-width: 100px;
+    margin: 0;
+    transition: all 0.3s linear;
+
+    background-color: #384555;
+    box-shadow: 0 1px 0 0 #1d2025, 0 0 0 1px #1d2025;
+    ul {
+      margin: 0;
+      padding: 0px 10px;
+    }
+    &_exit {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      height: 20px;
+      margin-top: 10px;
+      padding: 0px 10px;
+      &-item {
+        display: block;
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 21px;
+            right: 10px;
+            width: 20px;
+            height: 4px;
+            background: $color-text;
+        }
+        &::before {
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        &::after {
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .link {
+    color: #c4c4ce;
+  }
+
+  
+.mainPage_inner.active .navigation  {
+  left: 0;
+}
+
+
+  .mainPage_inner {
+    flex-direction: column;
+    padding: 0;
+  }
+  .profile {
+    order: -1;
+    &_header {
+      display: flex;
+      align-items: center;
+    }
+    &_inner {
+      display: flex;
+      align-items: center;
+    }
+    &_image {
+      margin: 0;
+      width: 130px;
+      margin-right: 10px;
+    }
+    &_name {
+      font-size: 15px;
+    }
+    &_age {
+      margin: 0;
+    }
+    &_info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: start;
+    }
+  }
+
+
+  .content {
+    width: 100%;
+    &_title {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      padding: 10px 10px;
+      &_text {
+        padding: 0;
+      }
+    }
+    &_works {
+      height: 113px;
+      margin-bottom: 10px;
+    }
+    &_technologies {
+      &_title {
+        padding: 10px 10px;
+      }
+      &_inner {
+        padding: 0;
+      }
+    }
+  }
+
+  .swiper-pagination-bullets {
+    bottom: 4px;
+  }
+  .swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+  }
+
+  // Only for slide with Arithmetic Animate
+
+  .slide_title {
+    top: 15px;
+    left: 25px;
+    font-size: 12px;
+  }
+  .slide_info {
+    font-size: 12px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+// === WORK === // 
+
+.work {
+  padding: 20px 10px;
+  &-title {
+    padding-bottom: 20px;
+    &-logo {
+      width: 90px;
+      margin-right: 30px;
+      margin-left: 15px;
+    }
+    &-text {
+      font-size: 12px;
+    }
+  }
+  &-content {
+    ul {
+      padding-left: 25px;
+      li {
+        margin-bottom: 10px;
+      }
+    }
+    &-images {
+      &-item {
+        display: block;
+        margin: 0 auto;
+        width: 250px;
+        & + & {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+// === // WORK === // 
+
+
+// === ABOUT === // 
+.about {
+  font-size: 15px;
+  font-weight: $fw-bold;
+  &_inner {
+    padding: 10px 15px;
+  }
+}
+
+
+// === // ABOUT === // 
+
+
+
+// === /// MEDIA === //
+
 
 
 

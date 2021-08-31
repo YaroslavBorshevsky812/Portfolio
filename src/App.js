@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
@@ -14,23 +14,34 @@ import Experience from './components/experience/Experience'
 
  
 function App() {
+    
+    const [burger, setBurger] = useState(false)
+    const mainInnerClasses = ['mainPage_inner']
+    if(burger) {
+        mainInnerClasses.push(['active'])
+    }
+
     return (
     <div className='mainPage'>
-        <div className='mainPage_inner'>
+        <div className={mainInnerClasses.join(' ')}>
 
             <nav className='navigation'>
+                <div className='navigation_exit'>
+                    <i onClick={() => setBurger(!burger)} className='navigation_exit-item'></i>
+                </div>
+                
                 <ul>
                     <li>
-                        <Link className='link' to='/Portfolio'>Главная</Link>
+                        <Link onClick={() => setBurger(!burger)} className='link' to='/Portfolio'>Главная</Link>
                     </li>
                     {/* <li>
                         <Link className='link' to='/education'>Образование</Link>
                     </li> */}
                     <li>
-                        <Link className='link' to='/experience'>Опыт работы</Link>
+                        <Link onClick={() => setBurger(!burger)} className='link' to='/experience'>Опыт работы</Link>
                     </li>
                     <li>
-                        <Link className='link' to='/about'>О себе</Link>
+                        <Link onClick={() => setBurger(!burger)} className='link' to='/about'>О себе</Link>
                     </li>
                 </ul>
                 <div className='navigation_icon'>
@@ -59,16 +70,24 @@ function App() {
             </AnimatePresence>
             
             
-
             <div className='profile'>
+                    <div className="profile_header">
+                        <button onClick={() => setBurger(!burger)} className={'burger'}>
+                            <span className="burger_line"></span>
+                            <span className="burger_line"></span>
+                            <span className="burger_line"></span>
+                        </button>
+                    </div>
                 <div className='profile_inner'>
-                    <div className='profile_image' style={{height: '100px', width: '100px'}}>
+                    <div className='profile_image'>
                         <img className='profile_image_pic' src={photo} alt='photoPic'></img>
                     </div>
-                    <h3 className='profile_name'>Борщевский</h3>
-                    <h3 className='profile_name'>Ярослав</h3>
-                    <h4 className='profile_age'>24 года</h4>
-                    <h4 className='profile_city'>г. Москва</h4>
+                    <div className="profile_info">
+                            <h3 className='profile_name'>Борщевский Ярослав</h3>
+                        <h4 className='profile_age'>24 года</h4>
+                        <h4 className='profile_city'>г. Москва</h4>
+                    </div>
+                    
                 </div>
             </div>
 
