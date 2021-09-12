@@ -57,6 +57,10 @@ function MainPage() {
                         <SwiperSlide className='slide slide--jsonData' style={{width: '70%'}}>
                             <a href='https://yaroslavborshevsky812.github.io/Test_Json/' className='swiperLink'></a>
                         </SwiperSlide>
+                        
+                        <SwiperSlide className='slide slide--russiaOne' style={{width: '70%'}}>
+                            <a href='https://yaroslavborshevsky812.github.io/Markup_RussiaOne/' className='swiperLink'></a>
+                        </SwiperSlide>
                     </Swiper>
                 </div>
 
