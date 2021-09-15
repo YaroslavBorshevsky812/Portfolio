@@ -46,9 +46,9 @@ function MainPage() {
                             </a>
                         </SwiperSlide>
                         
-                        <SwiperSlide className='slide slide--auth' style={{width: '70%'}}>
+                        {/* <SwiperSlide className='slide slide--auth' style={{width: '70%'}}>
                             <a href='https://yaroslavborshevsky812.github.io/Auth_Random_User/' className='swiperLink'></a>
-                        </SwiperSlide>
+                        </SwiperSlide> */}
                         
                         <SwiperSlide className='slide slide--simple' style={{width: '70%'}}>
                             <a href='https://yaroslavborshevsky812.github.io/Html_Css_Prosto/' className='swiperLink'></a>
