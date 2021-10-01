@@ -16,13 +16,19 @@ import Experience from './components/experience/Experience'
 function App() {
     
     const [burger, setBurger] = useState(false)
+    const [darkTheme, setDartTheme] = useState(false)
     const mainInnerClasses = ['mainPage_inner']
+    const mainPageClasses = ['mainPage']
     if(burger) {
         mainInnerClasses.push(['active'])
     }
 
+    if(darkTheme) {
+        mainPageClasses.push(['dark'])
+    }
+
     return (
-    <div className='mainPage'>
+    <div className={mainPageClasses.join(' ')}>
         <div className={mainInnerClasses.join(' ')}>
 
             <nav className='navigation'>
@@ -77,6 +83,9 @@ function App() {
                             <span className="burger_line"></span>
                             <span className="burger_line"></span>
                         </button>
+                        <div class="container">
+                            <input onClick={() => setDartTheme(!darkTheme)} type="checkbox" id="toggle-button" class="toggle-button"/>
+                        </div>
                     </div>
                 <div className='profile_inner'>
                     <div className='profile_image'>
@@ -89,8 +98,11 @@ function App() {
                     </div>
                     
                 </div>
+                <div class="container-toggleBtn">
+                    <input onClick={() => setDartTheme(!darkTheme)} type="checkbox" id="toggle-button" class="toggle-button"/>
+                </div>
             </div>
-
+            
         </div>
     </div>
     )

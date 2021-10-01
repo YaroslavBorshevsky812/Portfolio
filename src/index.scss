@@ -47,6 +47,10 @@ $color-fon: #edeef0;
 $color-panels: #ffff;
 $color-text: #6f7985;
 
+$colorBlack-text: #8b949e;
+$colorBlack-fon: #161b22;
+$colorBlack-panels: #343a42;
+
 $shadow-panels:  0 1px 0 0 #dce1e6, 0 0 0 1px #e7eBec;
 
 $fw-bold: 700;
@@ -637,9 +641,90 @@ $breakpoint-s-max: $breakpoint-s-min - 1px;
 
 // === // ABOUT === // 
 
-
-
 // === /// MEDIA === //
+
+// ===  DARK THEME === //
+
+.mainPage.dark {
+  background-color: $colorBlack-fon;
+  .navigation,
+  .profile,
+  .experience,
+  .about {
+    background-color: $colorBlack-panels;
+    box-shadow: none;
+    color: $colorBlack-text;
+  }
+  .content {
+    &_title {
+      background-color: $colorBlack-panels;
+      box-shadow: none;
+      color: $colorBlack-text;
+    }
+    &_technologies {
+      background-color: $colorBlack-panels;
+      box-shadow: none;
+      color: $colorBlack-text;
+    }
+  }
+}
+
+// BUTTON //
+
+.container-toggleBtn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  @media (max-width: $breakpoint-s-max) {
+    display: none;
+  }
+}
+
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  margin: 0;
+  vertical-align: top;
+  background: $colorBlack-fon;
+  border: 1px solid #bbc1e1;
+  border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+ }
+
+ .toggle-button::after {
+  content: "";
+
+  display: inline-block;
+  position: absolute;
+  left: 2px;
+  top: 1.5px;
+
+  width: 20px;
+  height: 20px;
+  background-color: $color-fon;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  transform: translateX(0);
+}
+
+.toggle-button:checked::after {
+  transform: translateX(calc(100% + 3px));
+  background-color: #fff;  
+}
+.toggle-button:checked {
+  background-color: $colorBlack-text;
+}
+
+// /// BUTTON //
+
+// === ///  DARK THEME === //
+
 
 
 
