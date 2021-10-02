@@ -83,8 +83,8 @@ function App() {
                             <span className="burger_line"></span>
                             <span className="burger_line"></span>
                         </button>
-                        <div class="container">
-                            <input onClick={() => setDartTheme(!darkTheme)} type="checkbox" id="toggle-button" class="toggle-button"/>
+                        <div className="container">
+                            <input onClick={() => setDartTheme(!darkTheme)} type="checkbox" id="toggle-button" className="toggle-button"/>
                         </div>
                     </div>
                 <div className='profile_inner'>
@@ -98,8 +98,8 @@ function App() {
                     </div>
                     
                 </div>
-                <div class="container-toggleBtn">
-                    <input onClick={() => setDartTheme(!darkTheme)} type="checkbox" id="toggle-button" class="toggle-button"/>
+                <div className="container-toggleBtn">
+                    <input onClick={() => setDartTheme(!darkTheme)} type="checkbox" id="toggle-button" className="toggle-button"/>
                 </div>
             </div>
             
