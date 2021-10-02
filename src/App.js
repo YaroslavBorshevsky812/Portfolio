@@ -17,14 +17,20 @@ function App() {
     
     const [burger, setBurger] = useState(false)
     const [darkTheme, setDartTheme] = useState(false)
+    const [modalWindow, setModalWindow] = useState(false)
     const mainInnerClasses = ['mainPage_inner']
     const mainPageClasses = ['mainPage']
+    const modalWindowClasses = ['modal']
     if(burger) {
         mainInnerClasses.push(['active'])
     }
 
     if(darkTheme) {
         mainPageClasses.push(['dark'])
+    }
+
+    if(modalWindow) {
+        modalWindowClasses.push(['active'])
     }
 
     return (
@@ -87,12 +93,12 @@ function App() {
                             <input onClick={() => setDartTheme(!darkTheme)} type="checkbox" id="toggle-button" className="toggle-button"/>
                         </div>
                     </div>
-                <div className='profile_inner'>
+                <div onClick={() => setModalWindow(!modalWindow)} className='profile_inner'>
                     <div className='profile_image'>
                         <img className='profile_image_pic' src={photo} alt='photoPic'></img>
                     </div>
                     <div className="profile_info">
-                            <h3 className='profile_name'>Борщевский Ярослав</h3>
+                        <h3 className='profile_name'>Борщевский Ярослав</h3>
                         <h4 className='profile_age'>24 года</h4>
                         <h4 className='profile_city'>г. Москва</h4>
                     </div>
@@ -103,6 +109,23 @@ function App() {
                 </div>
             </div>
             
+        </div>
+        <div className={modalWindowClasses.join(' ')}>
+            <div className='modal-content'>
+                <div className='modal-content-image'>
+                    <img className='modal-content-image-pic' src={photo} alt='photoPic'></img>
+                </div>
+                <div className="modal-content-info">
+                    <div className="modal-header">
+                        <div className='modal-header-exit'>
+                            <i onClick={() => setModalWindow(!modalWindow)} className='modal-header-exit-item'></i>
+                        </div>
+                    </div>
+                    <h3 className='profile_name'>Борщевский Ярослав</h3>
+                    <h4 className='profile_age'>24 года</h4>
+                    <h4 className='profile_city'>г. Москва</h4>
+                </div>
+            </div>
         </div>
     </div>
     )
