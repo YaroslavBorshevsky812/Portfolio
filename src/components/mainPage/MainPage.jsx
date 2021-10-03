@@ -61,6 +61,10 @@ function MainPage() {
                         <SwiperSlide className='slide slide--russiaOne' style={{width: '70%'}}>
                             <a href='https://yaroslavborshevsky812.github.io/Markup_RussiaOne/' className='swiperLink'></a>
                         </SwiperSlide>
+
+                        <SwiperSlide className='slide slide--gym' style={{width: '70%'}}>
+                            <a href='https://yaroslavborshevsky812.github.io/GymMarkup/' className='swiperLink'></a>
+                        </SwiperSlide>
                     </Swiper>
                 </div>
 
