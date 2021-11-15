@@ -45,6 +45,18 @@ function MainPage() {
                                 </div>
                             </a>
                         </SwiperSlide>
+
+                        <SwiperSlide className='slide slide--react-list' style={{width: '70%'}}>
+                            <a href='https://yaroslavborshevsky812.github.io/react-list/' className='swiperLink'></a>
+                        </SwiperSlide>
+
+                        <SwiperSlide className='slide slide--cards-list' style={{width: '70%'}}>
+                            <a href='https://yaroslavborshevsky812.github.io/ida-form/' className='swiperLink'></a>
+                        </SwiperSlide>
+
+                        <SwiperSlide className='slide slide--color-picker' style={{width: '70%'}}>
+                            <a href='https://yaroslavborshevsky812.github.io/colorPicker-slider/' className='swiperLink'></a>
+                        </SwiperSlide>
                         
                         <SwiperSlide className='slide slide--auth' style={{width: '70%'}}>
                             <a href='https://yaroslavborshevsky812.github.io/Auth_Random_User/' className='swiperLink'></a>

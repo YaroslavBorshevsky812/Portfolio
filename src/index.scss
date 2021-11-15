@@ -489,6 +489,15 @@ $breakpoint-s-max: $breakpoint-s-min - 1px;
   &--gym {
     background-image: url('./images/promo/gym.png');
   }
+  &--react-list {
+    background-image: url('./images/promo/react-table.png');
+  }
+  &--cards-list {
+    background-image: url('./images/promo//cards.png');
+  }
+  &--color-picker {
+    background-image: url('./images/promo/color-picker.png');
+  }
 }
 
 .swiperLink {
