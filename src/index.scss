@@ -130,6 +130,7 @@ $breakpoint-s-max: $breakpoint-s-min - 1px;
 .content {
   flex-grow: 1;
   margin-right: 20px;
+  max-width: 929px;
   &_title {
     @include panel;
     margin-bottom: 20px;
@@ -266,6 +267,7 @@ $breakpoint-s-max: $breakpoint-s-min - 1px;
   @include panel;
   text-align: center;
   max-height: 250px;
+  max-width: 151px;
   // max-width: 135px;
   color: $color-text;
   &_inner {
@@ -608,6 +610,7 @@ $breakpoint-s-max: $breakpoint-s-min - 1px;
   }
   .profile {
     order: -1;
+    max-width: 100%;
     &_header {
       display: flex;
       align-items: center;

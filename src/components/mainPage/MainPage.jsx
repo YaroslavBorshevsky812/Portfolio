@@ -21,12 +21,12 @@ SwiperCore.use([Pagination]);
 
 function MainPage() {
     return (
-        <motion.div 
+            <motion.div 
+                className='content'
                 exit={{opacity:0}}
                 animate={{opacity:1}}
                 initial={{opacity:0}}
-        >
-            <div className='content'>
+            >
                 <div className='content_title'>
                     <h4 className='content_title_text'>Портфолио</h4>
                     <h4 className='content_title_text'>Junior Frontend Developer</h4>
@@ -121,9 +121,7 @@ function MainPage() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </motion.div>
-        
+            </motion.div>
     )
 }
 
