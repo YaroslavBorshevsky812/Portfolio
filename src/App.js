@@ -49,9 +49,9 @@ function App() {
                     {/* <li>
                         <Link className='link' to='/education'>Образование</Link>
                     </li> */}
-                    <li>
+                    {/* <li>
                         <Link onClick={() => setBurger(!burger)} className='link' to='/experience'>Опыт работы</Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link onClick={() => setBurger(!burger)} className='link' to='/about'>О себе</Link>
                     </li>
